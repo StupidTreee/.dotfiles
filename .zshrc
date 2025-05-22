@@ -97,6 +97,7 @@ alias code='code-insiders'
 alias g='cd ~/desktop/git'
 alias shut='shutdown -h now'
 alias gist='git status'
+alias ff='fastfetch'
 
 alias d='docker'
 alias dc='docker compose'
