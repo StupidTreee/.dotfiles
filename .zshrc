@@ -108,11 +108,12 @@ alias dps='docker ps'
 alias dpsa='docker ps -a'
 alias py='python'
 
-# functions
+# =====functions=====
 log() {
   git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%C(reset)' --all
 }
 
+# lazyg: easy git commit & push
 lazyg() {
   if [[ -z "$1" ]]; then
     echo "❌ Commit message missing |  usage: lazyg <'message'>"
@@ -123,11 +124,22 @@ lazyg() {
   git push
 }
 
+# tat: tmux attach
+function tat {
+  name=$(basename `pwd` | sed -e 's/\.//g')
+
+  if tmux ls 2>&1 | grep "$name"; then
+    tmux attach -t "$name"
+  elif [ -f .envrc ]; then
+    direnv exec / tmux new-session -s "$name"
+  else
+    tmux new-session -s "$name"
+  fi
+}
 
 # Shell integrations
 eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
-
 
 # Load Angular CLI autocompletion.
 source <(ng completion script)
