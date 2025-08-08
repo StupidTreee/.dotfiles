@@ -56,7 +56,7 @@ bindkey '^n' history-search-forward
 bindkey '^[w' kill-region
 
 # Ctrl + Backspace → Wort links löschen
-bindkey "^H" backward-kill-word
+bindkey "\e" backward-kill-word
 
 # Ctrl + Left/Right → Wörter springen
 bindkey "^[[1;5D" backward-word
