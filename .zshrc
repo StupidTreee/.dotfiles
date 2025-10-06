@@ -98,6 +98,7 @@ alias g='cd ~/desktop/git'
 alias shut='shutdown -h now'
 alias gist='git status'
 alias ff='fastfetch'
+alias sdiy='sudo dnf install -y'
 
 alias d='docker'
 alias dc='docker compose'
@@ -117,7 +118,7 @@ log() {
 lazyg() {
   if [[ -z "$1" ]]; then
     echo "❌ Commit message missing |  usage: lazyg <'message'>"
-    return 1
+return 1
   fi
   git add -A
   git commit -m "$1"
