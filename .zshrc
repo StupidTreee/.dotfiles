@@ -56,7 +56,7 @@ bindkey '^n' history-search-forward
 bindkey '^[w' kill-region
 
 # Ctrl + Backspace → Wort links löschen
-bindkey "^H" backward-kill-word
+bindkey "\e" backward-kill-word
 
 # Ctrl + Left/Right → Wörter springen
 bindkey "^[[1;5D" backward-word
@@ -94,7 +94,7 @@ alias vim='nvim'
 alias c='clear'
 alias x='exit'
 alias code='code-insiders'
-alias g='cd ~/desktop/git'
+alias g='cd ~/Documents/git'
 alias shut='shutdown -h now'
 alias gist='git status'
 alias ff='fastfetch'
