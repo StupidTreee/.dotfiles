@@ -109,6 +109,9 @@ alias dps='docker ps'
 alias dpsa='docker ps -a'
 alias py='python'
 
+# env variables
+export SSH_AUTH_SOCK=/home/felix/snap/bitwarden/current/.bitwarden-ssh-agent.sock
+
 # =====functions=====
 log() {
   git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%C(reset)' --all
