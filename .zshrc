@@ -110,7 +110,11 @@ alias dpsa='docker ps -a'
 alias py='python'
 
 # env variables
-export SSH_AUTH_SOCK=/home/felix/.var/app/com.bitwarden.desktop/data/.bitwarden-ssh-agent.sock
+if [ -S "$HOME/.var/app/com.bitwarden.desktop/data/.bitwarden-ssh-agent.sock" ]; then
+    export SSH_AUTH_SOCK="$HOME/.var/app/com.bitwarden.desktop/data/.bitwarden-ssh-agent.sock"
+elif [ -S "$HOME/.var/app/com.bitwarden.desktop/.bitwarden-ssh-agent.sock" ]; then
+    export SSH_AUTH_SOCK="$HOME/.var/app/com.bitwarden.desktop/.bitwarden-ssh-agent.sock"
+fi
 
 # =====functions=====
 log() {
