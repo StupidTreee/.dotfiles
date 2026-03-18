@@ -88,7 +88,7 @@ zstyle ':completion:*' menu no
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 
-# Aliases
+#=====Aliase=====
 alias ls='ls --color'
 alias vim='nvim'
 alias c='clear'
@@ -117,6 +117,7 @@ elif [ -S "$HOME/.var/app/com.bitwarden.desktop/.bitwarden-ssh-agent.sock" ]; th
 fi
 
 # =====functions=====
+# easy and simple git log function
 log() {
   git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%C(reset)' --all
 }
@@ -151,3 +152,6 @@ eval "$(zoxide init --cmd cd zsh)"
 
 # Load Angular CLI autocompletion.
 source <(ng completion script)
+
+# Created by `pipx` on 2025-12-19 07:32:09
+export PATH="$PATH:/home/felix/.local/bin"
